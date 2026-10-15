@@ -9,7 +9,8 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Keep the school page at the index route with semantic section anchors; its compact always-visible navigation serves a single-page experience.
+- Keep the index presentational; dedicated content routes share the root school layout and an accessible right-side Radix navigation drawer.
 - Keep school styling in the global semantic design system and use the school Button variants for large accessible actions.
-- Photo submissions use an explicitly temporary browser preview and a WhatsApp handoff; never imply remote publication without a configured storage service and moderation.
+- Competition photos persist in private Cloud storage with published metadata in a public gallery; server-side RLS allows writes only to users with a separate admin role, assigned explicitly by the owner.
+- Public gallery metadata loads through a publishable server function and TanStack Query; browser-safe signed storage links expose only published images, never storage credentials.
 - Provide an independent HTML export with Italian instructions when source delivery is requested; do not replace the TanStack application framework.
