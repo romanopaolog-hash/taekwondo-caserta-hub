@@ -10,33 +10,73 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContattiRouteImport } from './routes/contatti'
+import { Route as GareRouteImport } from './routes/gare'
+import { Route as OrariRouteImport } from './routes/orari'
+import { Route as SediRouteImport } from './routes/sedi'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContattiRoute = ContattiRouteImport.update({
+  id: '/contatti',
+  path: '/contatti',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GareRoute = GareRouteImport.update({
+  id: '/gare',
+  path: '/gare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrariRoute = OrariRouteImport.update({
+  id: '/orari',
+  path: '/orari',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SediRoute = SediRouteImport.update({
+  id: '/sedi',
+  path: '/sedi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contatti': typeof ContattiRoute
+  '/gare': typeof GareRoute
+  '/orari': typeof OrariRoute
+  '/sedi': typeof SediRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contatti': typeof ContattiRoute
+  '/gare': typeof GareRoute
+  '/orari': typeof OrariRoute
+  '/sedi': typeof SediRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contatti': typeof ContattiRoute
+  '/gare': typeof GareRoute
+  '/orari': typeof OrariRoute
+  '/sedi': typeof SediRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/contatti' | '/gare' | '/orari' | '/sedi'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/contatti' | '/gare' | '/orari' | '/sedi'
+  id: '__root__' | '/' | '/contatti' | '/gare' | '/orari' | '/sedi'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContattiRoute: typeof ContattiRoute
+  GareRoute: typeof GareRoute
+  OrariRoute: typeof OrariRoute
+  SediRoute: typeof SediRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +88,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contatti': {
+      id: '/contatti'
+      path: '/contatti'
+      fullPath: '/contatti'
+      preLoaderRoute: typeof ContattiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gare': {
+      id: '/gare'
+      path: '/gare'
+      fullPath: '/gare'
+      preLoaderRoute: typeof GareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/orari': {
+      id: '/orari'
+      path: '/orari'
+      fullPath: '/orari'
+      preLoaderRoute: typeof OrariRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sedi': {
+      id: '/sedi'
+      path: '/sedi'
+      fullPath: '/sedi'
+      preLoaderRoute: typeof SediRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContattiRoute: ContattiRoute,
+  GareRoute: GareRoute,
+  OrariRoute: OrariRoute,
+  SediRoute: SediRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
