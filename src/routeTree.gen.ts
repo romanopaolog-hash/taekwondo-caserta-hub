@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AmministratoriRouteImport } from './routes/amministratori'
+import { Route as ContattiRouteImport } from './routes/contatti'
+import { Route as GareRouteImport } from './routes/gare'
+import { Route as OrariRouteImport } from './routes/orari'
+import { Route as RecuperoPasswordRouteImport } from './routes/recupero-password'
+import { Route as SediRouteImport } from './routes/sedi'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AmministratoriRoute = AmministratoriRouteImport.update({
+  id: '/amministratori',
+  path: '/amministratori',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContattiRoute = ContattiRouteImport.update({
+  id: '/contatti',
+  path: '/contatti',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GareRoute = GareRouteImport.update({
+  id: '/gare',
+  path: '/gare',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrariRoute = OrariRouteImport.update({
+  id: '/orari',
+  path: '/orari',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecuperoPasswordRoute = RecuperoPasswordRouteImport.update({
+  id: '/recupero-password',
+  path: '/recupero-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SediRoute = SediRouteImport.update({
+  id: '/sedi',
+  path: '/sedi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/amministratori': typeof AmministratoriRoute
+  '/contatti': typeof ContattiRoute
+  '/gare': typeof GareRoute
+  '/orari': typeof OrariRoute
+  '/recupero-password': typeof RecuperoPasswordRoute
+  '/sedi': typeof SediRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/amministratori': typeof AmministratoriRoute
+  '/contatti': typeof ContattiRoute
+  '/gare': typeof GareRoute
+  '/orari': typeof OrariRoute
+  '/recupero-password': typeof RecuperoPasswordRoute
+  '/sedi': typeof SediRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/amministratori': typeof AmministratoriRoute
+  '/contatti': typeof ContattiRoute
+  '/gare': typeof GareRoute
+  '/orari': typeof OrariRoute
+  '/recupero-password': typeof RecuperoPasswordRoute
+  '/sedi': typeof SediRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/amministratori'
+    | '/contatti'
+    | '/gare'
+    | '/orari'
+    | '/recupero-password'
+    | '/sedi'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/amministratori'
+    | '/contatti'
+    | '/gare'
+    | '/orari'
+    | '/recupero-password'
+    | '/sedi'
+  id:
+    | '__root__'
+    | '/'
+    | '/amministratori'
+    | '/contatti'
+    | '/gare'
+    | '/orari'
+    | '/recupero-password'
+    | '/sedi'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AmministratoriRoute: typeof AmministratoriRoute
+  ContattiRoute: typeof ContattiRoute
+  GareRoute: typeof GareRoute
+  OrariRoute: typeof OrariRoute
+  RecuperoPasswordRoute: typeof RecuperoPasswordRoute
+  SediRoute: typeof SediRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/amministratori': {
+      id: '/amministratori'
+      path: '/amministratori'
+      fullPath: '/amministratori'
+      preLoaderRoute: typeof AmministratoriRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contatti': {
+      id: '/contatti'
+      path: '/contatti'
+      fullPath: '/contatti'
+      preLoaderRoute: typeof ContattiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gare': {
+      id: '/gare'
+      path: '/gare'
+      fullPath: '/gare'
+      preLoaderRoute: typeof GareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/orari': {
+      id: '/orari'
+      path: '/orari'
+      fullPath: '/orari'
+      preLoaderRoute: typeof OrariRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recupero-password': {
+      id: '/recupero-password'
+      path: '/recupero-password'
+      fullPath: '/recupero-password'
+      preLoaderRoute: typeof RecuperoPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sedi': {
+      id: '/sedi'
+      path: '/sedi'
+      fullPath: '/sedi'
+      preLoaderRoute: typeof SediRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AmministratoriRoute: AmministratoriRoute,
+  ContattiRoute: ContattiRoute,
+  GareRoute: GareRoute,
+  OrariRoute: OrariRoute,
+  RecuperoPasswordRoute: RecuperoPasswordRoute,
+  SediRoute: SediRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

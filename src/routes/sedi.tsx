@@ -1,0 +1,7 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { ArrowUpRight, MapPin } from 'lucide-react';
+import { PageHeading } from '@/components/school/layout';
+import { school, schoolHead } from '@/lib/school/info';
+import { Button } from '@/components/ui/button';
+export const Route = createFileRoute('/sedi')({ component: Venues, head: () => schoolHead('Le sedi', 'La sede del Taekwondo Ispanico Caserta: Santangelo Sport Village, Via Eugenio Ruggiero 12, Caserta. Mappa e indicazioni.') });
+function Venues() { return <section className="modern-shell content-page"><PageHeading number="03" title="Ci vediamo sul tatami." description="La nostra palestra a Caserta. Un luogo in cui allenarsi e crescere insieme." /><h2 className="venue-title">Santangelo Sport Village</h2><p className="lead">{school.address}</p><iframe className="map-frame" title="Mappa della sede Santangelo Sport Village, Caserta" src="https://maps.google.com/maps?q=Santangelo%20Sport%20Village%20Via%20Eugenio%20Ruggiero%2012%20Caserta&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen /><div className="actions"><Button asChild variant="school" size="school"><a href={school.maps} target="_blank" rel="noopener noreferrer"><MapPin aria-hidden="true" />Apri la mappa <ArrowUpRight aria-hidden="true" /></a></Button></div><p className="placeholder">[Foto della palestra e altre sedi da inserire]</p></section>; }

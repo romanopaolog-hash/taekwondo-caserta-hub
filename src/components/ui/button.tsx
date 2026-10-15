@@ -9,6 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        menu: "menu-button",
         school: "school-button school-button-primary",
         schoolOutline: "school-button school-button-outline",
         default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",

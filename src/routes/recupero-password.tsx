@@ -1,0 +1,8 @@
+import { createFileRoute, Link } from '@tanstack/react-router';
+import { useState } from 'react';
+import { supabase } from '@/integrations/supabase/client';
+import { Button } from '@/components/ui/button';
+import { PageHeading } from '@/components/school/layout';
+import { schoolHead } from '@/lib/school/info';
+export const Route = createFileRoute('/recupero-password')({ component: Reset, head: () => schoolHead('Recupero password', 'Scegli una nuova password per il tuo account amministratore del Taekwondo Ispanico Caserta.') });
+function Reset() { const [password,setPassword]=useState(''); const [message,setMessage]=useState(''); const [busy,setBusy]=useState(false); async function save(e: React.FormEvent) { e.preventDefault(); setBusy(true); const { error }=await supabase.auth.updateUser({ password }); setMessage(error ? 'Impossibile aggiornare la password. Apri il collegamento ricevuto via email e riprova.' : 'Password aggiornata. Puoi tornare all’area amministratori.'); setPassword(''); setBusy(false); } return <section className="modern-shell content-page"><PageHeading number="06" title="Una nuova password." description="Apri questa pagina dal collegamento ricevuto via email." /><form className="form-stack auth-panel" onSubmit={save}><div className="field"><label htmlFor="new-password">Nuova password</label><input id="new-password" type="password" minLength={8} required autoComplete="new-password" value={password} onChange={e=>setPassword(e.target.value)} /></div><Button variant="school" size="school" disabled={busy}>Salva password</Button><p role="status">{message}</p><Link to="/amministratori">Torna all’area amministratori</Link></form></section>; }

@@ -1,0 +1,7 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { ArrowUpRight, Phone } from 'lucide-react';
+import { PageHeading } from '@/components/school/layout';
+import { school, schoolHead } from '@/lib/school/info';
+import { Button } from '@/components/ui/button';
+export const Route = createFileRoute('/contatti')({ component: Contacts, head: () => schoolHead('Contatti', 'Contatta Taekwondo Ispanico Caserta: telefono +39 327 622 6136, Instagram e sede al Santangelo Sport Village.') });
+function Contacts() { return <section className="modern-shell content-page"><PageHeading number="05" title="Parliamone insieme." description="Per conoscere la scuola, i corsi o il turno più adatto a te, siamo qui." /><div className="contact-rows"><div className="contact-row"><span>Telefono</span><div><a className="contact-big" href={school.tel}>{school.phone}</a><div className="actions"><Button asChild variant="school" size="school"><a href={school.tel}><Phone aria-hidden="true" />Chiama ora</a></Button></div></div></div><div className="contact-row"><span>Instagram</span><a href={school.instagram} target="_blank" rel="noopener noreferrer" className="text-link">@taekwondo.ispanico <ArrowUpRight aria-hidden="true" /></a></div><div className="contact-row"><span>Dove ci trovi</span><p>{school.venue}<br />{school.address}</p></div><div className="contact-row"><span>Email</span><p className="placeholder">[Email della scuola da inserire]</p></div></div></section>; }
