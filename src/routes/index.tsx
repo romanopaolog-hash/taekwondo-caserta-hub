@@ -61,7 +61,7 @@ function Index() {
       <section id="inizio" className="hero shell" aria-labelledby="hero-title"><div className="hero-layout"><div>
         <p className="eyebrow">Taekwondo Ispanico Caserta</p>
         <h1 id="hero-title">Volere è potere<br />con il Taekwondo<br />Ispanico</h1>
-        <p className="hero-description">Una scuola, una squadra. Il Taekwondo per bambini, ragazzi e adulti, con la guida del Maestro Antonio Rago.</p>
+        <p className="hero-description">Corsi per bambini, ragazzi e adulti, con il Maestro Antonio Rago.</p>
         <div className="actions"><Button asChild variant="school" size="school"><a href={tel}><Phone aria-hidden="true" />Chiama ora</a></Button><Button asChild variant="schoolOutline" size="school"><a href="#orari">Vedi gli orari<ArrowDown aria-hidden="true" /></a></Button></div>
         <p className="hero-phone">Parliamone insieme: <a href={tel}>{phone}</a></p>
       </div><img className="hero-logo" src={logo.url} alt="Emblema della scuola Taekwondo Ispanico Caserta — Team Rago" width="420" height="420" /></div>

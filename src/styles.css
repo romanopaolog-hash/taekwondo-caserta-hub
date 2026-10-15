@@ -70,7 +70,7 @@ svg { flex-shrink: 0; }
 .hero-description { margin-top: 28px; color: var(--muted-foreground); max-width: 47ch; font-size: 22px; }
 .hero-logo { width: 100%; max-width: 420px; aspect-ratio: 1; justify-self: end; }
 .actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
-.school-button { border-radius: 4px; font-size: 20px; font-family: var(--font-body); font-weight: 700; line-height: 1.35; text-decoration: none; transition: background-color 150ms; }
+.school-button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; border-radius: 4px; font-size: 20px; font-family: var(--font-body); font-weight: 700; line-height: 1.35; text-decoration: none; transition: background-color 150ms; }
 .school-button-size { min-height: 56px; height: auto; padding: 14px 24px; white-space: normal; }
 .school-button svg { width: 20px; height: 20px; }
 .school-button-primary { color: var(--primary-foreground); background: var(--primary); border: 1px solid var(--primary); }
@@ -169,12 +169,12 @@ td:nth-child(2) { font-weight: 700; white-space: nowrap; }
   .site-nav { justify-content: space-between; gap: 12px; }
   .site-nav a { font-size: 20px; min-height: 44px; }
   .shell { padding-inline: 24px; }
-  .hero { padding-top: 32px; padding-bottom: 32px; }
-  .hero-layout { display: flex; flex-direction: column-reverse; gap: 24px; align-items: stretch; }
-  .hero-logo { width: 158px; align-self: center; }
+  .hero { padding-top: 24px; padding-bottom: 32px; }
+  .hero-layout { display: flex; flex-direction: column-reverse; gap: 18px; align-items: stretch; }
+  .hero-logo { width: 112px; align-self: center; }
   .eyebrow { margin-bottom: 18px; font-size: 15px; }
   .hero h1 { font-size: 39px; line-height: 1.17; }
-  .hero-description { font-size: 20px; margin-top: 22px; }
+  .hero-description { font-size: 20px; margin-top: 18px; line-height: 1.5; }
   .actions { gap: 12px; margin-top: 24px; }
   .hero .actions { display: grid; grid-template-columns: 1fr; }
   .hero-phone { flex-wrap: wrap; font-size: 20px; margin-top: 20px; }
